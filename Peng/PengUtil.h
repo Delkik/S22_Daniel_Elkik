@@ -2,10 +2,14 @@
 
 #include "pch.h"
 
-#ifdef PENG_LIB
-	#define PENG_API __declspec(dllexport)
+#ifdef PENG_WINDOWS
+	#ifdef PENG_LIB
+		#define PENG_API __declspec(dllexport)
+	#else
+		#define PENG_API __declspec(dllimport)
+	#endif
 #else
-	#define PENG_API __declspec(dllimport)
+	#define PENG_API 
 #endif
 
 #ifdef PENG_DEBUG
