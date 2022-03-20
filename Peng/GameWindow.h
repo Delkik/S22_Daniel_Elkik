@@ -1,10 +1,11 @@
 #pragma once
 
 #include "WindowImplementation.h"
+#include "PengUtil.h"
 
 namespace Peng {
 
-	class GameWindow {
+	class PENG_API GameWindow {
 
 	public:
 		static void Init();
