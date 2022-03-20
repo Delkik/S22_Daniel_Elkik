@@ -10,6 +10,8 @@ namespace Peng {
 		void Run();
 		virtual void OnUpdate();
 
+	private:
+
 	};
 
 }

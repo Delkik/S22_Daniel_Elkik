@@ -1,6 +1,7 @@
 #pragma once
 
 #include "PengApp.h"
+#include "GameWindow.h"
 
 
 
