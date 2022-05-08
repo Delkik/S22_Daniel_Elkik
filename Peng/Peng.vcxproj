@@ -158,9 +158,12 @@
     <ClInclude Include="Peng.h" />
     <ClInclude Include="PengApp.h" />
     <ClInclude Include="PengUtil.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RendererImplementation.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderImplementation.h" />
     <ClInclude Include="specificGLFW\GlfwWindow.h" />
+    <ClInclude Include="specificOpenGL\OpenGLRenderer.h" />
     <ClInclude Include="specificOpenGL\OpenGLShader.h" />
     <ClInclude Include="specificOpenGL\OpenGLSprite.h" />
     <ClInclude Include="Sprite.h" />
@@ -176,8 +179,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PengApp.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="specificGLFW\GlfwWindow.cpp" />
+    <ClCompile Include="specificOpenGL\OpenGLRenderer.cpp" />
     <ClCompile Include="specificOpenGL\OpenGLShader.cpp" />
     <ClCompile Include="specificOpenGL\OpenGLSprite.cpp" />
     <ClCompile Include="Sprite.cpp" />

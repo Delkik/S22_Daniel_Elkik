@@ -1,5 +1,6 @@
 #include "pch.h"
 
+#include "glad/glad.h"
 #include "GlfwWindow.h"
 #include "PengUtil.h"
 
@@ -20,6 +21,10 @@ namespace Peng {
 			return false;
 		}
 		glfwMakeContextCurrent(glfwWindow_);
+		gladLoadGL();
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+			PENG_LOG("GLAD failed to initialize")
+		}
 		return true;
 	}
 	

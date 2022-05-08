@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "Shader.h"
-//#include "specificOpenGL/OpenGLShader.h"
 #include "specificOpenGL/OpenGLShader.h"
 
 namespace Peng {

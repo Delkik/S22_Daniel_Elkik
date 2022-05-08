@@ -4,6 +4,7 @@
 #include "GameWindow.h"
 
 #include "glad/glad.h"
+#include "Renderer.h"
 #include "Sprite.h"
 #include "Shader.h"
 
@@ -16,11 +17,8 @@ namespace Peng {
 		Peng::GameWindow::Init();
 
 		Peng::GameWindow::GetWindow()->CreateWindow(800,600,"Pengine");
-		gladLoadGL();
 
-		Peng::Shader shader{ "../Peng/Assets/Shaders/defaultVertex.glsl","../Peng/Assets/Shaders/defaultFragment.glsl" };
-		shader.SetUniform2Ints("windowSize", 800, 600);
-		shader.SetUniform3Ints("spriteCoord", 0, 0, 1.0);
+		Renderer::Init();
 
 		Peng::Sprite star{"../Peng/Assets/Images/Star.png"};
 
@@ -30,9 +28,7 @@ namespace Peng {
 			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT);
 
-			shader.Bind();
-			star.Bind();
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+			Renderer::Draw(star, 50, 20, 1);
 
 			Peng::GameWindow::GetWindow()->SwapBuffers(); // display frames
 			Peng::GameWindow::GetWindow()->PollEvents();
