@@ -16,11 +16,12 @@ namespace Peng {
 		while (vertexInput) {
 			std::string line;
 			getline(vertexInput, line);
+			line.append("\n");
 			sourceCode += line;
 		}
 
 		vertexInput.close();
-		PENG_LOG(sourceCode);
+
 		const char* cSource = sourceCode.c_str();
 		glShaderSource(vertexShader, 1, &cSource, NULL);
 		glCompileShader(vertexShader);
@@ -42,6 +43,7 @@ namespace Peng {
 		while (fragmentInput) {
 			std::string line;
 			getline(fragmentInput, line);
+			line.append("\n");
 			sourceCode += line;
 		}
 
@@ -70,6 +72,8 @@ namespace Peng {
 			glGetProgramInfoLog(shaderProgram_, 512, NULL, infoLog);
 			std::cout << "Error shader linking compilation failed\n" << infoLog << std::endl;
 		}
+		glDeleteShader(vertexShader);
+		glDeleteShader(fragmentShader);
 	}
 
 	void OpenGLShader::SetUniform3Ints(const std::string& uniformName, int val1, int val2, int val3)

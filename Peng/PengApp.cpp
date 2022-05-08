@@ -13,14 +13,14 @@ namespace Peng {
 	void PengApp::Run() {
 
 		PENG_LOG("Peng has initiated...\n");
-
 		Peng::GameWindow::Init();
 
 		Peng::GameWindow::GetWindow()->CreateWindow(800,600,"Pengine");
+		gladLoadGL();
 
 		Peng::Shader shader{ "../Peng/Assets/Shaders/defaultVertex.glsl","../Peng/Assets/Shaders/defaultFragment.glsl" };
 		shader.SetUniform2Ints("windowSize", 800, 600);
-		shader.SetUniform3Ints("spriteCoord", 100, 200, 1.0f);
+		shader.SetUniform3Ints("spriteCoord", 0, 0, 1.0);
 
 		Peng::Sprite star{"../Peng/Assets/Images/Star.png"};
 
