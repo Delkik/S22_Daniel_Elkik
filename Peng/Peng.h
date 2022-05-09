@@ -2,7 +2,9 @@
 
 #include "PengApp.h"
 #include "GameWindow.h"
-
+#include "Sprite.h"
+#include "Shader.h"
+#include "Renderer.h"
 
 
 #define PENG_APPLICATION_START(T) \

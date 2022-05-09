@@ -21,7 +21,8 @@ namespace Peng {
 			return false;
 		}
 		glfwMakeContextCurrent(glfwWindow_);
-		gladLoadGL();
+		glfwSwapInterval(1);
+		//gladLoadGL();
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 			PENG_LOG("GLAD failed to initialize")
 		}

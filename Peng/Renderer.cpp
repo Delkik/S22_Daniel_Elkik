@@ -17,6 +17,11 @@ namespace Peng {
 		instance_->implementation_->Draw(picture, xPos, yPos, zPos, instance_->shader_);
 	}
 
+	void Renderer::ClearScreen()
+	{
+		instance_->implementation_->ClearScreen();
+	}
+
 	Renderer::Renderer() : 
 		shader_("../Peng/Assets/Shaders/defaultVertex.glsl", "../Peng/Assets/Shaders/defaultFragment.glsl") 
 	{

@@ -4,6 +4,7 @@
 #include "ShaderImplementation.h"
 
 namespace Peng {
+
 	class PENG_API Shader
 	{
 	public:

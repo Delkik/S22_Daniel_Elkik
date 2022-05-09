@@ -3,7 +3,6 @@
 #include "PengApp.h"
 #include "GameWindow.h"
 
-#include "glad/glad.h"
 #include "Renderer.h"
 #include "Sprite.h"
 #include "Shader.h"
@@ -16,22 +15,31 @@ namespace Peng {
 		PENG_LOG("Peng has initiated...\n");
 		Peng::GameWindow::Init();
 
-		Peng::GameWindow::GetWindow()->CreateWindow(800,600,"Pengine");
+		Peng::GameWindow::GetWindow()->CreateWindow(800, 600, "Pengine");
 
 		Renderer::Init();
 
-		Peng::Sprite star{"../Peng/Assets/Images/Star.png"};
+		Peng::Sprite star{ "../Peng/Assets/Images/Star.png" };
+
+		int xPos{ -star.GetWidth() };
+
+		nextFrameTime_ = std::chrono::steady_clock::now() + frameDuration_;
 
 		while (true) {
 			OnUpdate();
 
-			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-			glClear(GL_COLOR_BUFFER_BIT);
+			Renderer::ClearScreen();
 
-			Renderer::Draw(star, 50, 20, 1);
+			Renderer::Draw(star, xPos, 20, 1);
+
+			xPos = (xPos + 5) % ((Peng::GameWindow::GetWindow()->GetWidth() + star.GetWidth())-star.GetWidth());
+
+			std::this_thread::sleep_until(nextFrameTime_);
 
 			Peng::GameWindow::GetWindow()->SwapBuffers(); // display frames
 			Peng::GameWindow::GetWindow()->PollEvents();
+
+			nextFrameTime_ += frameDuration_;
 		}
 	}
 
