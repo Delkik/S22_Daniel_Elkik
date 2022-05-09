@@ -44,6 +44,16 @@ namespace Peng {
 		return window_->GetHeight();
 	}
 
+	void GameWindow::SetKeyPressedCallback(const std::function<void(const KeyPressedEvent&)> keyPressedCallback)
+	{
+		window_->SetKeyPressedCallback(keyPressedCallback);
+	}
+
+	void GameWindow::SetKeyReleasedCallback(const std::function<void(const KeyReleasedEvent&)> keyReleasedCallback)
+	{
+		window_->SetKeyReleasedCallback(keyReleasedCallback);
+	}
+
 	GameWindow::GameWindow() {
 
 	#ifdef PENG_WINDOWS
