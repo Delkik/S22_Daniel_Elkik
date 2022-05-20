@@ -11,40 +11,24 @@
 
 namespace Peng {
 
-	void PengApp::Run() {
-
+	PengApp::PengApp() {
 		PENG_LOG("Peng has initiated...\n");
 		Peng::GameWindow::Init();
 
-		Peng::GameWindow::GetWindow()->CreateWindow(800, 600, "Pengine");
+		Peng::GameWindow::GetWindow()->CreateWindow(1000, 800, "Pengine");
 
 		Renderer::Init();
+	}
 
-		Peng::Sprite star{ "../Peng/Assets/Images/Star.png" };
+	void PengApp::Run() {
 
 		nextFrameTime_ = std::chrono::steady_clock::now() + frameDuration_;
 
 
-		int x{ 50 }, y{ 51 };
-		auto keyCallback = [&x](const KeyPressedEvent& event) {
-			if (event.GetKeyCode() == PENG_KEY_LEFT) {
-				x -= 5;
-			}
-			else if (event.GetKeyCode() == PENG_KEY_RIGHT) {
-				x += 5;
-			}
-		};
-		auto keyRelease = [](const KeyReleasedEvent& event) {PENG_LOG(event.GetKeyCode()); };
-		SetKeyPressedCallback(keyCallback);
-		SetKeyReleasedCallback(keyRelease);
-
 		while (true) {
-			OnUpdate();
-
 			Renderer::ClearScreen();
 
-			Renderer::Draw(star, x, y, 1);
-
+			OnUpdate();
 
 			std::this_thread::sleep_until(nextFrameTime_);
 

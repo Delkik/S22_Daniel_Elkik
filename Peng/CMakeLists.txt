@@ -14,6 +14,8 @@ set(HEADER_FILES
 	specificOpenGL/OpenGLSprite.h
 	specificOpenGL/OpenGLShader.h
 	specificOpenGL/OpenGLRenderer.h
+	Events.h
+	KeyCodes.h
 	)
 
 set(SOURCE_FILES 

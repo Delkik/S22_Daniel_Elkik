@@ -1,7 +1,9 @@
 #pragma once
 
+#include "PengUtil.h"
+
 namespace Peng {
-	class KeyPressedEvent
+	class PENG_API KeyPressedEvent
 	{
 	public:
 		KeyPressedEvent(int keyCode);
@@ -14,8 +16,7 @@ namespace Peng {
 	};
 	
 
-
-	class KeyReleasedEvent
+	class PENG_API KeyReleasedEvent
 	{
 	public:
 		KeyReleasedEvent(int keyCode);

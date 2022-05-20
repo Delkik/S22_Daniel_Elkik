@@ -1,8 +1,6 @@
 #include "Peng.h"
 
-class Game : public Peng::PengApp {
-
-};
+#include "GameApp.h"
 
 
-PENG_APPLICATION_START(Game);
+PENG_APPLICATION_START(GameApp);

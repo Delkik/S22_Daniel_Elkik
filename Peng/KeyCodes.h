@@ -1,6 +1,5 @@
 #pragma once
 
-#ifdef PENG_WINDOWS or defined PENG_MACOS or defined PENG_LINUX
 
 	#define PENG_KEY_SPACE              32
 	#define PENG_KEY_APOSTROPHE         39  /* ' */
@@ -125,4 +124,3 @@
 	#define PENG_KEY_RIGHT_SUPER        347
 	#define PENG_KEY_MENU               348
 
-#endif

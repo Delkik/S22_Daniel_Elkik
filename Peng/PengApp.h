@@ -11,6 +11,7 @@ namespace Peng {
 	class PENG_API PengApp {
 
 	public:
+		PengApp();
 		void Run();
 		virtual void OnUpdate();
 		void SetKeyPressedCallback(std::function<void(const KeyPressedEvent&)> keyPressedCallback);
