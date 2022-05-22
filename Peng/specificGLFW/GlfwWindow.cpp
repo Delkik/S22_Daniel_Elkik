@@ -32,7 +32,7 @@ namespace Peng {
 
 		glfwSetKeyCallback(glfwWindow_, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
 
-			if (action == GLFW_PRESS || action == GLFW_REPEAT) {
+			if (action == GLFW_PRESS) {
 				Callbacks* userPointer{ (Callbacks*)glfwGetWindowUserPointer(window) };
 
 				KeyPressedEvent event{ key };
@@ -44,7 +44,33 @@ namespace Peng {
 				KeyReleasedEvent event{ key };
 				userPointer->keyReleasedCallback(event);
 			}
+			else if (action == GLFW_REPEAT) {
+				Callbacks* userPointer{ (Callbacks*)glfwGetWindowUserPointer(window) };
+
+				KeyHeldEvent event{ key };
+				userPointer->keyHeldCallback(event);
+			}
 			});
+
+
+		glfwSetMouseButtonCallback(glfwWindow_, [](GLFWwindow* window, int button, int action, int mods) {
+
+			if (action == GLFW_PRESS) {
+				Callbacks* userPointer{ (Callbacks*)glfwGetWindowUserPointer(window) };
+
+				MousePressedEvent event{ button };
+				userPointer->mousePressedCallback(event);
+			}
+
+			else if (action == GLFW_RELEASE) {
+				Callbacks* userPointer{ (Callbacks*)glfwGetWindowUserPointer(window) };
+
+				MouseReleasedEvent event{ button };
+				userPointer->mouseReleasedCallback(event);
+			}
+
+			});
+
 		return true;
 	}
 	
@@ -75,6 +101,14 @@ namespace Peng {
 		return height;
 	}
 
+	double* GlfwWindow::GetMousePosition() const
+	{
+		double x, y;
+		glfwGetCursorPos(glfwWindow_,&x,&y);
+		double pos[2]{x,y};
+		return pos;
+	}
+
 	void GlfwWindow::SetKeyPressedCallback(std::function<void(const KeyPressedEvent&)> keyPressedCallback)
 	{
 		callbacks_.keyPressedCallback = keyPressedCallback;
@@ -84,6 +118,21 @@ namespace Peng {
 	void GlfwWindow::SetKeyReleasedCallback(std::function<void(const KeyReleasedEvent&)> keyReleasedCallback)
 	{
 		callbacks_.keyReleasedCallback = keyReleasedCallback;
+	}
+
+	void GlfwWindow::SetKeyHeldCallback(std::function<void(const KeyHeldEvent&)> keyHeldCallback)
+	{
+		callbacks_.keyHeldCallback = keyHeldCallback;
+	}
+
+	void GlfwWindow::SetMousePressedCallback(std::function<void(const MousePressedEvent&)> mousePressedCallback)
+	{
+		callbacks_.mousePressedCallback = mousePressedCallback;
+	}
+
+	void GlfwWindow::SetMouseReleasedCallback(std::function<void(const MouseReleasedEvent&)> mouseReleasedCallback)
+	{
+		callbacks_.mouseReleasedCallback = mouseReleasedCallback;
 	}
 
 

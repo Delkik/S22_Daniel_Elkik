@@ -16,6 +16,7 @@ public:
 	int GetActiveImage() const;
 	int GetWidth() const;
 	int GetHeight() const;
+	std::vector<int> GetCenter() const;
 
 	void SetX(int x);
 	void SetY(int y);

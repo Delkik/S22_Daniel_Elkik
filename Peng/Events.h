@@ -27,5 +27,41 @@ namespace Peng {
 	private:
 		int keyCode_;
 	};
+
+	class PENG_API KeyHeldEvent
+	{
+	public:
+		KeyHeldEvent(int keyCode);
+		KeyHeldEvent() = delete;
+
+		int GetKeyCode() const;
+
+	private:
+		int keyCode_;
+	};
+
+	class PENG_API MousePressedEvent
+	{
+	public:
+		MousePressedEvent(int button);
+		MousePressedEvent() = delete;
+
+		int GetButton() const;
+
+	private:
+		int button_;
+	};
+
+	class PENG_API MouseReleasedEvent
+	{
+	public:
+		MouseReleasedEvent(int button);
+		MouseReleasedEvent() = delete;
+
+		int GetButton() const;
+
+	private:
+		int button_;
+	};
 }
 

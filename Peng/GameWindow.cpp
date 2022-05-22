@@ -44,6 +44,11 @@ namespace Peng {
 		return window_->GetHeight();
 	}
 
+	double* GameWindow::GetMousePosition() const
+	{
+		return window_->GetMousePosition();
+	}
+
 	void GameWindow::SetKeyPressedCallback(const std::function<void(const KeyPressedEvent&)> keyPressedCallback)
 	{
 		window_->SetKeyPressedCallback(keyPressedCallback);
@@ -52,6 +57,21 @@ namespace Peng {
 	void GameWindow::SetKeyReleasedCallback(const std::function<void(const KeyReleasedEvent&)> keyReleasedCallback)
 	{
 		window_->SetKeyReleasedCallback(keyReleasedCallback);
+	}
+
+	void GameWindow::SetKeyHeldCallback(const std::function<void(const KeyHeldEvent&)> keyHeldCallback)
+	{
+		window_->SetKeyHeldCallback(keyHeldCallback);
+	}
+
+	void GameWindow::SetMousePressedCallback(const std::function<void(const MousePressedEvent&)> mousePressedCallback)
+	{
+		window_->SetMousePressedCallback(mousePressedCallback);
+	}
+
+	void GameWindow::SetMouseReleasedCallback(const std::function<void(const MouseReleasedEvent&)> mouseReleasedCallback)
+	{
+		window_->SetMouseReleasedCallback(mouseReleasedCallback);
 	}
 
 	GameWindow::GameWindow() {

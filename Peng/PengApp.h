@@ -14,8 +14,13 @@ namespace Peng {
 		PengApp();
 		void Run();
 		virtual void OnUpdate();
+
 		void SetKeyPressedCallback(std::function<void(const KeyPressedEvent&)> keyPressedCallback);
 		void SetKeyReleasedCallback(std::function<void(const KeyReleasedEvent&)> keyReleasedCallback);
+		void SetKeyHeldCallback(std::function<void(const KeyHeldEvent&)> keyHeldCallback);
+
+		void SetMousePressedCallback(std::function<void(const MousePressedEvent&)> mousePressedCallback);
+		void SetMouseReleasedCallback(std::function<void(const MouseReleasedEvent&)> mouseReleasedCallback);
 
 	private:
 		std::chrono::milliseconds frameDuration_{ 1000 / PENG_FRAMERATE };

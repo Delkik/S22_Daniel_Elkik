@@ -53,4 +53,19 @@ namespace Peng {
 		GameWindow::GetWindow()->SetKeyReleasedCallback(keyReleasedCallback);
 	}
 
+	void PengApp::SetKeyHeldCallback(std::function<void(const KeyHeldEvent&)> keyHeldCallback)
+	{
+		GameWindow::GetWindow()->SetKeyHeldCallback(keyHeldCallback);
+	}
+
+	void PengApp::SetMousePressedCallback(std::function<void(const MousePressedEvent&)> mousePressedCallback)
+	{
+		GameWindow::GetWindow()->SetMousePressedCallback(mousePressedCallback);
+	}
+
+	void PengApp::SetMouseReleasedCallback(std::function<void(const MouseReleasedEvent&)> mouseReleasedCallback)
+	{
+		GameWindow::GetWindow()->SetMouseReleasedCallback(mouseReleasedCallback);
+	}
+
 }

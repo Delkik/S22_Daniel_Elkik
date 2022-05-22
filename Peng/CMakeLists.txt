@@ -28,6 +28,7 @@ set(SOURCE_FILES
 	specificOpenGL/OpenGLSprite.cpp
 	specificOpenGL/OpenGLShader.cpp
 	specificOpenGL/OpenGLRenderer.cpp
+	Events.cpp
 	)
 
 add_library(Peng SHARED ${HEADER_FILES} ${SOURCE_FILES})
@@ -44,3 +45,7 @@ include_directories(../glad/include)
 target_precompile_headers(Peng PRIVATE pch.h)
 
 target_link_libraries(Peng glfw glad stbi)
+
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Peng)
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug)
+file(COPY Assets DESTINATION ${PROJECT_BINARY_DIR}/Release)

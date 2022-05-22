@@ -14,4 +14,26 @@ namespace Peng {
 	{
 		return keyCode_;
 	}
-}
+
+
+	KeyHeldEvent::KeyHeldEvent(int keyCode) : keyCode_(keyCode) {}
+	int KeyHeldEvent::GetKeyCode() const
+	{
+		return keyCode_;
+	}
+
+
+	MousePressedEvent::MousePressedEvent(int button) : button_(button) {}
+	int MousePressedEvent::GetButton() const 
+	{
+		return button_;
+	}
+
+	MouseReleasedEvent::MouseReleasedEvent(int button) : button_(button) {}
+	int MouseReleasedEvent::GetButton() const
+	{
+		return button_;
+	}
+
+
+}	

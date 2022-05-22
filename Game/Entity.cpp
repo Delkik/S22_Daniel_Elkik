@@ -42,6 +42,11 @@ int Entity::GetHeight() const
 	return images_[activeImage_].GetHeight();
 }
 
+std::vector<int> Entity::GetCenter() const
+{
+	return std::vector<int>({ GetX() + (GetWidth() / 2), GetY() + (GetHeight() / 2) });
+}
+
 void Entity::SetX(int x)
 {
 	x_ = x;
