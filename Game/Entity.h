@@ -9,27 +9,27 @@ public:
 
 	Entity(const std::vector<std::string>& filenames);
 
-	int GetX() const;
-	int GetY() const;
-	int GetZ() const;
+	float GetX() const;
+	float GetY() const;
+	float GetZ() const;
 	bool GetSolid() const;
 	int GetActiveImage() const;
 	int GetWidth() const;
 	int GetHeight() const;
-	std::vector<int> GetCenter() const;
+	std::vector<float> GetCenter() const;
 
-	void SetX(int x);
-	void SetY(int y);
-	void SetZ(int z);
+	void SetX(float x);
+	void SetY(float y);
+	void SetZ(float z);
 	void SetSolid(bool solid);
 	void SetActiveImage(int activeImage);
 
 	void Draw();
 
 private:
-	int x_{ 0 };
-	int y_{ 0 };
-	int z_{ 0 };
+	float x_{ 0 };
+	float y_{ 0 };
+	float z_{ 0 };
 
 	bool solid_{ true };
 

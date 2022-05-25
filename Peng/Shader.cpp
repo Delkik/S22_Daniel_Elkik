@@ -23,6 +23,16 @@ namespace Peng {
 	}
 
 
+	void Shader::SetUniform3Floats(const std::string& uniformName, float val1, float val2, float val3)
+	{
+		implementation_->SetUniform3Floats(uniformName, val1, val2, val3);
+	}
+
+	void Shader::SetUniform2Floats(const std::string& uniformName, float val1, float val2)
+	{
+		implementation_->SetUniform2Floats(uniformName, val1, val2);
+	}
+
 	void Shader::Bind()
 	{
 		implementation_->Bind();

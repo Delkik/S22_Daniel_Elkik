@@ -7,17 +7,17 @@ Entity::Entity(const std::vector<std::string>& filenames) :
 
 }
 
-int Entity::GetX() const
+float Entity::GetX() const
 {
 	return x_;
 }
 
-int Entity::GetY() const
+float Entity::GetY() const
 {
 	return y_;
 }
 
-int Entity::GetZ() const
+float Entity::GetZ() const
 {
 	return z_;
 }
@@ -42,22 +42,22 @@ int Entity::GetHeight() const
 	return images_[activeImage_].GetHeight();
 }
 
-std::vector<int> Entity::GetCenter() const
+std::vector<float> Entity::GetCenter() const
 {
-	return std::vector<int>({ GetX() + (GetWidth() / 2), GetY() + (GetHeight() / 2) });
+	return std::vector<float>({ GetX() + (GetWidth() / 2), GetY() + (GetHeight() / 2) });
 }
 
-void Entity::SetX(int x)
+void Entity::SetX(float x)
 {
 	x_ = x;
 }
 
-void Entity::SetY(int y)
+void Entity::SetY(float y)
 {
 	y_ = y;
 }
 
-void Entity::SetZ(int z)
+void Entity::SetZ(float z)
 {
 	z_ = z;
 }

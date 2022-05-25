@@ -90,6 +90,20 @@ namespace Peng {
 		glUniform2i(uniformLocation, val1, val2);
 	}
 
+	void OpenGLShader::SetUniform3Floats(const std::string& uniformName, float val1, float val2, float val3)
+	{
+		int uniformLocation{ glGetUniformLocation(shaderProgram_,uniformName.c_str()) };
+		glUseProgram(shaderProgram_);
+		glUniform3f(uniformLocation, val1, val2, val3);
+	}
+
+	void OpenGLShader::SetUniform2Floats(const std::string& uniformName, float val1, float val2)
+	{
+		int uniformLocation{ glGetUniformLocation(shaderProgram_,uniformName.c_str()) };
+		glUseProgram(shaderProgram_);
+		glUniform2f(uniformLocation, val1, val2);
+	}
+
 	void OpenGLShader::Bind()
 	{
 		glUseProgram(shaderProgram_);

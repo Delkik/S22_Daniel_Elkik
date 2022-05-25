@@ -2,6 +2,7 @@ set(HEADER_FILES
 	Entity.h
 	Character.h
 	GameApp.h
+	Projectile.h
 )
 
 set(SOURCE_FILES
@@ -9,6 +10,7 @@ set(SOURCE_FILES
 	Character.cpp
 	GameApp.cpp
 	main.cpp
+	projectile.cpp
 )
 
 add_executable(Game ${HEADER_FILES} ${SOURCE_FILES})

@@ -9,12 +9,22 @@ double Character::GetStamina() const
 	return stamina_;
 }
 
+int Character::GetHealth() const
+{
+	return health_;
+}
+
+void Character::SetHealth(int health)
+{
+	health_ = health;
+}
+
 void Character::SetStamina(double stamina)
 {
 	stamina_ = stamina;
 }
 
-Entity Character::GetProjectile() const
+Projectile Character::GetProjectile() const
 {
 	return projectile_;
 }

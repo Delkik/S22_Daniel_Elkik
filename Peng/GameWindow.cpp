@@ -4,12 +4,7 @@
 
 namespace Peng {
 	
-	void GameWindow::Init() {
-		if (!instance_) { instance_ = new GameWindow; }
-
-	}
-
-
+	void GameWindow::Init() { if (!instance_) { instance_ = new GameWindow; } }
 
 	GameWindow* GameWindow::GetWindow()
 	{

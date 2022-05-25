@@ -1,0 +1,17 @@
+Changes:
+- Coordinate system changed to float values
+- Enemies now follow character
+	- Enemies constantly spawn
+- Character can also move up and down
+	- Smoothed out movement
+	- WASD instead of arrow keys
+- Pokemon sprites as placeholders
+
+New:
+- Left click to shoot
+- 3 lives
+- Randomly spawning ammo
+
+
+- There is a bug that randomly occurs when shooting that will crash the game. I should have fixed it but
+the cause is due to the use of erase on vectors.

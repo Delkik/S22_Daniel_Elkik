@@ -105,6 +105,8 @@ namespace Peng {
 	{
 		double x, y;
 		glfwGetCursorPos(glfwWindow_,&x,&y);
+		y -= GetHeight();
+		if (y < 0) { y *= -1; }
 		double pos[2]{x,y};
 		return pos;
 	}
